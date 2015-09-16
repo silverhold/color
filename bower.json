@@ -1,0 +1,23 @@
+{
+  "name": "color-helper",
+  "homepage": "https://github.com/LoicGoyet/color-helper",
+  "authors": [
+    "Loïc Goyet <loic@appventus.com>"
+  ],
+  "description": "A scss tool to generate bunch of color helper class.",
+  "main": "color-helper.scss",
+  "keywords": [
+    "scss",
+    "helpers",
+    "responsive",
+    "utilities"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
