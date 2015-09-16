@@ -1,10 +1,12 @@
 $colors: (
     red: #df3949,
+    white: #fff,
+    black: #000,
 ) !default;
 
 // Responsive breakpoints
 $color-helper--breakpoints: ('xs': 0, 'sm': 768px, 'md': 992px, 'lg': 1200px) !default;
-$color-helper--enable--breakpoints: true !default;
+$color-helper--enable--breakpoints: false !default;
 
 // Background-color
 $color-helper--enable--background-color: true !default;
@@ -12,7 +14,7 @@ $color-helper--selector--background-color: 'bg-color-' !default;
 
 // Text color
 $color-helper--enable--text-color: true !default;
-$color-helper--selector--text-color: 'text-' !default;
+$color-helper--selector--text-color: 'color-' !default;
 
 // Border color
 $color-helper--enable--border-color: true !default;
