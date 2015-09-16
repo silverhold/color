@@ -4,20 +4,21 @@ $colors: (
     red: #df3949,
 );
 
+// Responsive breakpoints
 $color-helper--breakpoints: ('xs': 0, 'sm': 768px, 'md': 992px, 'lg': 1200px);
 $color-helper--enable--breakpoints: true;
 
 // Background-color
 $color-helper--enable--background-color: true;
-$color-helper--selector--background-color: 'bg-color--';
+$color-helper--selector--background-color: 'bg-color-';
 
 // Text color
 $color-helper--enable--text-color: true;
-$color-helper--selector--text-color: 'text--';
+$color-helper--selector--text-color: 'text-';
 
 // Border color
 $color-helper--enable--border-color: true;
-$color-helper--selector--border-color: 'border-color--';
+$color-helper--selector--border-color: 'border-color-';
 
 $color-helper--property-list: (
     ('background-color', $color-helper--enable--background-color),
@@ -25,21 +26,47 @@ $color-helper--property-list: (
     ('border-color', $color-helper--enable--border-color),
 );
 
-@function color-helper--construct-selector($property, $label) {
+@function color-helper--construct-responsive-selector($selector, $breakpoint) {
+    @if $breakpoint != '' {
+        @return $selector + '-' + $breakpoint;
+    }
+    @return $selector;
+}
+
+@function color-helper--construct-selector($property, $label, $breakpoint) {
     @if $property == 'background-color' {
-        @return '.' + $color-helper--selector--background-color + $label;
+        $selector: '.' + $color-helper--selector--background-color + $label;
+        @return color-helper--construct-responsive-selector($selector, $breakpoint);
     } @elseif $property == 'color' {
-        @return '.' + $color-helper--selector--text-color + $label;
+        $selector: '.' + $color-helper--selector--text-color + $label;
+        @return color-helper--construct-responsive-selector($selector, $breakpoint);
     } @elseif $property == 'border-color' {
-        @return '.' + $color-helper--selector--border-color + $label;
+        $selector: '.' + $color-helper--selector--border-color + $label;
+        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+    }
+}
+
+@mixin color-helper--block-generator($property, $label, $value, $breakpoint: '') {
+    #{color-helper--construct-selector($property, $label, $breakpoint)} {
+        #{$property}: $value;
     }
 }
 
 @each $property, $enable, $selector in $color-helper--property-list {
     @if $enable {
         @each $label, $value in $colors {
-            #{color-helper--construct-selector($property, $label)} {
-                #{$property}: $value;
+            @include color-helper--block-generator($property, $label, $value);
+
+            @if $color-helper--enable--breakpoints {
+                @each $breakpoint, $query in $color-helper--breakpoints {
+                    @if $query == 0 {
+                        @include color-helper--block-generator($property, $label, $value, $breakpoint);
+                    } @else {
+                        @media (min-width: $query) {
+                            @include color-helper--block-generator($property, $label, $value, $breakpoint);
+                        }
+                    }
+                }
             }
         }
     }
