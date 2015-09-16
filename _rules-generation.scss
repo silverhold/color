@@ -1,0 +1,5 @@
+@mixin color-helper--rules-generator($property, $label, $value, $breakpoint: '') {
+    #{color-helper--construct-selector($property, $label, $breakpoint)} {
+        #{$property}: $value;
+    }
+}

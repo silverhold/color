@@ -1,0 +1,19 @@
+@function color-helper--construct-responsive-selector($selector, $breakpoint) {
+    @if $breakpoint != '' {
+        @return $selector + '-' + $breakpoint;
+    }
+    @return $selector;
+}
+
+@function color-helper--construct-selector($property, $label, $breakpoint) {
+    @if $property == 'background-color' {
+        $selector: '.' + $color-helper--selector--background-color + $label;
+        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+    } @elseif $property == 'color' {
+        $selector: '.' + $color-helper--selector--text-color + $label;
+        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+    } @elseif $property == 'border-color' {
+        $selector: '.' + $color-helper--selector--border-color + $label;
+        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+    }
+}
