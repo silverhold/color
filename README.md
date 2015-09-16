@@ -1,6 +1,12 @@
 # Color Helper
 A scss tool to generate bunch of color helper class.
 
+## Installation
+Color helper is available via bower :
+```
+$ bower install color-helper
+```
+
 ## Usage
 Include to your scss stylesheet the `color-helper.scss` file, and just before set a scss variable named $colors with this pattern :
 
