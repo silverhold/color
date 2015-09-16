@@ -1,0 +1,12 @@
+@import 'pick-color';
+
+$colors: (
+    red: #df3949,
+    blue: #2a3a56,
+);
+
+$test: pick-color(red);
+
+* {
+    color: $test;
+}
