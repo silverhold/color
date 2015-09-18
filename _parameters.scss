@@ -9,7 +9,7 @@ $color-helper--breakpoints: ('xs': 0, 'sm': 768px, 'md': 992px, 'lg': 1200px) !d
 $color-helper--enable--breakpoints: false !default;
 
 // States helpers
-$color-helper--enable--state-hover: true;
+$color-helper--enable--state-hover: false;
 $color-helper--selector__suffix--state-hover: '__hover';
 $color-helper--selector__append--state-hover: '&:hover, &.hover';
 
