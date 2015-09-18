@@ -18,19 +18,23 @@ $colors: (
 )
 ```
 
-And you are all set ! It will generate class to attribute with those colors for the color, background-color and border-color attributes on this pattern : `color-{color}`, `background-color-{color}`, `border-color-{color}`.
+And you are all set ! It will generate class to attribute with those colors for the color, background-color, border-color, fill (opt-in) & stroke (opt-in) attributes on this pattern : `color-{color}`, `background-color-{color}`, `border-color-{color}`, `fill-{color}`, `stroke-{color}`.
 
 ### Disable generation
 You can disable the generation of class for one the three property supported by resetting to false the following three variables :
 * `$color-helper--enable--text-color`
 * `$color-helper--enable--background-color`
 * `$color-helper--enable--border-color`
+* `$color-helper--enable--fill-color`
+* `$color-helper--enable--stroke-color`
 
 ### Custom class name
 You don't like the class name generated ? You can override it by resseting the following variable for each property :
 * `$color-helper--selector--background-color` (`'bg-color-'` as default);
 * `$color-helper--selector--text-color` (`'color-'` as default);
 * `$color-helper--selector--border-color` (`'border-color-'` as default);
+* `$color-helper--selector--fill-color` (`'fill-'` as default);
+* `$color-helper--selector--stroke-color` (`'stroke-'` as default);
 
 
 ### Responsive classes
