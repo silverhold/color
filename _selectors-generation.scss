@@ -1,25 +1,54 @@
-@function color-helper--construct-responsive-selector($selector, $breakpoint) {
+@function color-helper--construct-responsive-selector($selector, $breakpoint, $state) {
     @if $breakpoint != '' {
-        @return $selector + '-' + $breakpoint;
+        @return $selector + '-' + $breakpoint + $state;
     }
-    @return $selector;
+    @return $selector + $state;
 }
 
-@function color-helper--construct-selector($property, $label, $breakpoint) {
+@function color-helper--construct-selector--property-picker($property) {
     @if $property == 'background-color' {
-        $selector: '.' + $color-helper--selector--background-color + $label;
-        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+        @return $color-helper--selector--background-color;
     } @elseif $property == 'color' {
-        $selector: '.' + $color-helper--selector--text-color + $label;
-        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+        @return $color-helper--selector--text-color;
     } @elseif $property == 'border-color' {
-        $selector: '.' + $color-helper--selector--border-color + $label;
-        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+        @return $color-helper--selector--border-color;
     } @elseif $property == 'fill' {
-        $selector: '.' + $color-helper--selector--fill-color + $label;
-        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+        @return $color-helper--selector--fill-color;
     } @elseif $property == 'stroke' {
-        $selector: '.' + $color-helper--selector--stroke-color + $label;
-        @return color-helper--construct-responsive-selector($selector, $breakpoint);
+        @return $color-helper--selector--stroke-color;
+    }
+
+    @return false;
+}
+
+@function color-helper--construct-selector--state-picker($state) {
+    @if $state == 'hover' {
+        @return $color-helper--selector__suffix--state-hover;
+    } @elseif $state == 'active' {
+        @return $color-helper--selector__suffix--state-active;
+    } @elseif $state == 'focus' {
+        @return $color-helper--selector__suffix--state-focus;
+    } @elseif $state == 'visited' {
+        @return $color-helper--selector__suffix--state-visited;
+    }
+
+    @return '';
+}
+
+@function color-helper--construct-selector($property, $label, $breakpoint, $state: null) {
+    $property: color-helper--construct-selector--property-picker($property);
+    $state: color-helper--construct-selector--state-picker($state);
+    @return color-helper--construct-responsive-selector('.' + $property + $label, $breakpoint, $state);
+}
+
+@function color-helper--construct-state-selector($state) {
+    @if $state == 'hover' {
+        @return $color-helper--selector__append--state-hover;
+    } @elseif $state == 'active' {
+        @return $color-helper--selector__append--state-active;
+    } @elseif $state == 'focus' {
+        @return $color-helper--selector__append--state-focus;
+    } @elseif $state == 'visited' {
+        @return $color-helper--selector__append--state-visited;
     }
 }

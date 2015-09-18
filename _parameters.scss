@@ -8,6 +8,23 @@ $colors: (
 $color-helper--breakpoints: ('xs': 0, 'sm': 768px, 'md': 992px, 'lg': 1200px) !default;
 $color-helper--enable--breakpoints: false !default;
 
+// States helpers
+$color-helper--enable--state-hover: true;
+$color-helper--selector__suffix--state-hover: '__hover';
+$color-helper--selector__append--state-hover: '&:hover, &.hover';
+
+$color-helper--enable--state-active: false;
+$color-helper--selector__suffix--state-active: '__active';
+$color-helper--selector__append--state-active: '&:active, &.active';
+
+$color-helper--enable--state-focus: false;
+$color-helper--selector__suffix--state-focus: '__focus';
+$color-helper--selector__append--state-focus: '&:focus, &.focus';
+
+$color-helper--enable--state-visited: false;
+$color-helper--selector__suffix--state-visited: '__visited';
+$color-helper--selector__append--state-visited: '&:visited, &.visited';
+
 // Background-color
 $color-helper--enable--background-color: true !default;
 $color-helper--selector--background-color: 'bg-color-' !default;

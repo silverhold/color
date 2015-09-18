@@ -11,6 +11,13 @@ $color-helper--property-list: (
     ('stroke', $color-helper--enable--stroke-color),
 );
 
+$color-helper--state-list: (
+    ('hover', $color-helper--enable--state-hover),
+    ('active', $color-helper--enable--state-active),
+    ('focus', $color-helper--enable--state-focus),
+    ('visited', $color-helper--enable--state-visited),
+);
+
 $index: 0;
 @each $property, $enable, $selector in $color-helper--property-list {
     @if $enable {
