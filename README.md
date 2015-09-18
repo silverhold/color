@@ -49,6 +49,25 @@ $color-helper--breakpoints: (
 );
 ```
 
+### State classes
+You can turn to `true` enable color classes to a specific color, property and state (hover, active, focus, visited) with the following variables :
+* $color-helper--enable--state-hover
+* $color-helper--enable--state-active
+* $color-helper--enable--state-focus
+* $color-helper--enable--state-visited
+
+You can also custom the class suffix for each state, by redefine each parameter below (with the default value for the example) :
+* `$color-helper--selector__suffix--state-hover: '-hover'`
+* `$color-helper--selector__suffix--state-active: '-active'`
+* `$color-helper--selector__suffix--state-focus: '-focus'`
+* `$color-helper--selector__suffix--state-visited: '-visited'`
+
+It is also possible to control on what selector (like &:hover or &.hover) by redefine each parameter below (with the default value for the example) :
+* `$color-helper--selector__append--state-hover: '&:hover'`;
+* `$color-helper--selector__append--state-active: '&:active'`;
+* `$color-helper--selector__append--state-focus: '&:focus'`;
+* `$color-helper--selector__append--state-visited: '&:visited'`;
+
 ### The pick color utility
 `pick-color.scss` is a function NOT INCLUDED in color-helper that could be interesting for your usages. It will just return the value of the color name passed as argument.
 
