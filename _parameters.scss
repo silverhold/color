@@ -9,21 +9,21 @@ $color-helper--breakpoints: ('xs': 0, 'sm': 768px, 'md': 992px, 'lg': 1200px) !d
 $color-helper--enable--breakpoints: false !default;
 
 // States helpers
-$color-helper--enable--state-hover: false;
-$color-helper--selector__suffix--state-hover: '-hover';
-$color-helper--selector__append--state-hover: '&:hover';
+$color-helper--enable--state-hover: false !default;
+$color-helper--selector__suffix--state-hover: '-hover' !default;
+$color-helper--selector__append--state-hover: '&:hover' !default;
 
-$color-helper--enable--state-active: false;
-$color-helper--selector__suffix--state-active: '-active';
-$color-helper--selector__append--state-active: '&:active';
+$color-helper--enable--state-active: false !default;
+$color-helper--selector__suffix--state-active: '-active' !default;
+$color-helper--selector__append--state-active: '&:active' !default;
 
-$color-helper--enable--state-focus: false;
-$color-helper--selector__suffix--state-focus: '-focus';
-$color-helper--selector__append--state-focus: '&:focus';
+$color-helper--enable--state-focus: false !default;
+$color-helper--selector__suffix--state-focus: '-focus' !default;
+$color-helper--selector__append--state-focus: '&:focus' !default;
 
-$color-helper--enable--state-visited: false;
-$color-helper--selector__suffix--state-visited: '-visited';
-$color-helper--selector__append--state-visited: '&:visited';
+$color-helper--enable--state-visited: false !default;
+$color-helper--selector__suffix--state-visited: '-visited' !default;
+$color-helper--selector__append--state-visited: '&:visited' !default;
 
 // Background-color
 $color-helper--enable--background-color: true !default;
