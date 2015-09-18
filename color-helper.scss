@@ -7,20 +7,26 @@ $color-helper--property-list: (
     ('background-color', $color-helper--enable--background-color),
     ('color', $color-helper--enable--text-color),
     ('border-color', $color-helper--enable--border-color),
+    ('fill', $color-helper--enable--fill-color),
+    ('stroke', $color-helper--enable--stroke-color),
 );
 
+$index: 0;
 @each $property, $enable, $selector in $color-helper--property-list {
     @if $enable {
         @each $label, $value in $colors {
             @include color-helper--rules-generator($property, $label, $value);
+            $index: $index + 1;
 
             @if $color-helper--enable--breakpoints {
                 @each $breakpoint, $query in $color-helper--breakpoints {
                     @if $query == 0 {
                         @include color-helper--rules-generator($property, $label, $value, $breakpoint);
+                        $index: $index + 1;
                     } @else {
                         @media (min-width: $query) {
                             @include color-helper--rules-generator($property, $label, $value, $breakpoint);
+                            $index: $index + 1;
                         }
                     }
                 }
@@ -28,3 +34,5 @@ $color-helper--property-list: (
         }
     }
 }
+
+@warn 'Color helper generated #{$index} classes. Be aware of the amount of unsed kb of css that could be generated'
