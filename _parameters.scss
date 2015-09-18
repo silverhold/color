@@ -21,9 +21,9 @@ $color-helper--enable--border-color: true !default;
 $color-helper--selector--border-color: 'border-color-' !default;
 
 // fill | svg
-$color-helper--enable--fill-color: true !default;
+$color-helper--enable--fill-color: false !default;
 $color-helper--selector--fill-color: 'fill-' !default;
 
 // stroke | svg
-$color-helper--enable--stroke-color: true !default;
+$color-helper--enable--stroke-color: false !default;
 $color-helper--selector--stroke-color: 'stroke-' !default;
