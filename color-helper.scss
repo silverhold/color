@@ -8,6 +8,7 @@ $color-helper--property-list: (
     ('color', $color-helper--enable--text-color),
     ('border-color', $color-helper--enable--border-color),
     ('fill', $color-helper--enable--fill-color),
+    ('stroke', $color-helper--enable--stroke-color),
 );
 
 @each $property, $enable, $selector in $color-helper--property-list {

@@ -20,6 +20,10 @@ $color-helper--selector--text-color: 'color-' !default;
 $color-helper--enable--border-color: true !default;
 $color-helper--selector--border-color: 'border-color-' !default;
 
-// fill color
+// fill | svg
 $color-helper--enable--fill-color: true !default;
 $color-helper--selector--fill-color: 'fill-' !default;
+
+// stroke | svg
+$color-helper--enable--stroke-color: true !default;
+$color-helper--selector--stroke-color: 'stroke-' !default;
