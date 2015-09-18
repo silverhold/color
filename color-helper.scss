@@ -7,6 +7,7 @@ $color-helper--property-list: (
     ('background-color', $color-helper--enable--background-color),
     ('color', $color-helper--enable--text-color),
     ('border-color', $color-helper--enable--border-color),
+    ('fill', $color-helper--enable--fill-color),
 );
 
 @each $property, $enable, $selector in $color-helper--property-list {

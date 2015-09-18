@@ -15,5 +15,8 @@
     } @elseif $property == 'border-color' {
         $selector: '.' + $color-helper--selector--border-color + $label;
         @return color-helper--construct-responsive-selector($selector, $breakpoint);
+    } @elseif $property == 'fill' {
+        $selector: '.' + $color-helper--selector--fill-color + $label;
+        @return color-helper--construct-responsive-selector($selector, $breakpoint);
     }
 }
