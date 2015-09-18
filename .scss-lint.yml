@@ -5,3 +5,5 @@ linters:
     width: 4
   PropertySortOrder:
     enabled: false
+  NameFormat:
+    enabled: false

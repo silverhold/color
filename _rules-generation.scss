@@ -2,4 +2,18 @@
     #{color-helper--construct-selector($property, $label, $breakpoint)} {
         #{$property}: $value;
     }
+
+    @each $state, $enable in $color-helper--state-list {
+        @if $enable {
+            @include color-heleper--rules-generator($property, $label, $value, $state, $breakpoint);
+        }
+    }
+}
+
+@mixin color-heleper--rules-generator($property, $label, $value, $state, $breakpoint: '') {
+    #{color-helper--construct-selector($property, $label, $breakpoint, $state)} {
+        #{color-helper--construct-state-selector($state)} {
+            #{$property}: $value;
+        }
+    }
 }
