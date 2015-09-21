@@ -81,3 +81,6 @@ It is also possible to control on what selector (like &:hover or &.hover) by red
     color: #df3949;
 }
 ```
+
+## Using Color Helper with performance
+Color Helper can generates a lot of css, and it could be very costly on a performance perspective. In order to fully enjoy color helper without any generated classes unused we recommand the usage of [unscss](https://github.com/giakki/uncss)
