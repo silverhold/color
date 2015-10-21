@@ -1,6 +1,7 @@
+// scss-lint:disable ImportantRule
 @mixin color-helper--rules-generator($property, $label, $value, $breakpoint: '') {
     #{color-helper--construct-selector($property, $label, $breakpoint)} {
-        #{$property}: $value;
+        #{$property}: $value !important;
     }
 
     @each $state, $enable in $color-helper--state-list {
@@ -13,7 +14,7 @@
 @mixin color-heleper--rules-generator($property, $label, $value, $state, $breakpoint: '') {
     #{color-helper--construct-selector($property, $label, $breakpoint, $state)} {
         #{color-helper--construct-state-selector($state)} {
-            #{$property}: $value;
+            #{$property}: $value !important;
         }
     }
 }
