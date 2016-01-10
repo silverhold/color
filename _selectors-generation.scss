@@ -38,7 +38,7 @@
 @function color-helper--construct-selector($property, $label, $breakpoint, $state: null) {
     $property: color-helper--construct-selector--property-picker($property);
     $state: color-helper--construct-selector--state-picker($state);
-    @return color-helper--construct-responsive-selector('.' + $property + $label, $breakpoint, $state);
+    @return color-helper--construct-responsive-selector('.' + $property + $label, $breakpoint, $state) + ', ' + color-helper--construct-responsive-selector('%' + $property + $label, $breakpoint, $state);
 }
 
 @function color-helper--construct-state-selector($state) {
