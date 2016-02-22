@@ -1,1 +1,106 @@
-Hello world color gui !
+{% if colors is not defined %}
+    {% set colors = [] %}
+{% endif %}
+
+<section>
+    <h2>Color helper</h2>
+
+    <ul class="color-swatches">
+        {% for color in colors %}
+            <li class="color-swatch">
+                <div class="color-swatch__preview bg-color--{{ color }}"></div>
+                <div class="color-swatch__title">{{ color }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        For each of the colors shown above you can use the helper classes listed below. Each helper class has its equilavent sass placeholder to extend.
+    </p>
+
+    {% set helpers = [
+        {
+            'property': 'background-color',
+            'class': '.bg-color--{color}',
+            'default': true,
+        },
+        {
+            'property': 'color',
+            'class': '.color--{color}',
+            'default': true,
+        },
+        {
+            'property': 'border-color',
+            'class': '.border-color--{color}',
+            'default': true,
+        },
+        {
+            'property': 'fill',
+            'class': '.fill--{color}',
+            'default': false,
+        },
+        {
+            'property': 'stroke',
+            'class': '.stroke--{color}',
+            'default': false,
+        },
+    ] %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>property</th>
+                <th>helper class</th>
+                <th>is default enabled</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for helper in helpers %}
+                <tr>
+                    <td>{{ helper.property }}</td>
+                    <td>{{ helper.class }}</td>
+                    <td>{{ helper.default }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    {% if breakpoints|default(false) %}
+        <h2>Responsive helper</h2>
+
+        <p class="color--red-xs color--black-sm">
+            You can add as suffix the breakpoint for each helper class to apply the property on a mediaquery (with the "mobile-first" philosophy). This specific paragraph is a showcase.
+        </p>
+
+        <pre>&lt;p class="color--red-xs color--black-sm"&gt;
+    You can add as suffix the breakpoint for each helper class to apply the property on a mediaquery (with the "mobile-first" philosophy). This specific paragraph is a showcase.
+&lt;/p&gt;</pre>
+    {% endif %}
+
+    {% if state|default(false) %}
+        <h2>State helper</h2>
+
+        <p>
+            You can add as suffix the state for each helper class to apply the property for a specific state like below
+        </p>
+
+        <p>
+            <button class="bg-color--white bg-color--red-hover">Hover the button to make it red</button>
+        </p>
+
+        <pre>&lt;button class="bg-color--white bg-color--red-hover"&gt;Hover the button to make it red&lt;/button&gt;</pre>
+
+        <p>
+            The different state supported are :
+        </p>
+
+        <ul>
+            <li><code>::hover</code></li>
+            <li><code>::active</code></li>
+            <li><code>::focus</code></li>
+            <li><code>::visited</code></li>
+        </ul>
+    {% endif %}
+</section>

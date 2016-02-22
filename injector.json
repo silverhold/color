@@ -3,6 +3,10 @@
         "@bower/color-helper/color-helper.scss"
     ],
 
+    "stylegui": [
+        "@bower/color-helper/gui.scss"
+    ],
+
     "gui": [
         "@bower/color-helper/gui.html.twig"
     ]
