@@ -1,0 +1,9 @@
+{
+    "stylevendor": [
+        "@bower/color-helper/color-helper.scss"
+    ],
+
+    "gui": [
+        "@bower/color-helper/gui.html.twig"
+    ]
+}
