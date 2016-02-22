@@ -1,12 +1,8 @@
-{% if colors is not defined %}
-    {% set colors = [] %}
-{% endif %}
-
 <section>
     <h2>Color helper</h2>
 
     <ul class="color-swatches">
-        {% for color in colors %}
+        {% for color in colors|default(['red', 'white', 'black']) %}
             <li class="color-swatch">
                 <div class="color-swatch__preview bg-color--{{ color }}"></div>
                 <div class="color-swatch__title">{{ color }}</div>

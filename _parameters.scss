@@ -27,20 +27,20 @@ $color-helper--selector__append--state-visited: '&:visited' !default;
 
 // Background-color
 $color-helper--enable--background-color: true !default;
-$color-helper--selector--background-color: 'bg-color-' !default;
+$color-helper--selector--background-color: 'bg-color--' !default;
 
 // Text color
 $color-helper--enable--text-color: true !default;
-$color-helper--selector--text-color: 'color-' !default;
+$color-helper--selector--text-color: 'color--' !default;
 
 // Border color
 $color-helper--enable--border-color: true !default;
-$color-helper--selector--border-color: 'border-color-' !default;
+$color-helper--selector--border-color: 'border-color--' !default;
 
 // fill | svg
 $color-helper--enable--fill-color: false !default;
-$color-helper--selector--fill-color: 'fill-' !default;
+$color-helper--selector--fill-color: 'fill--' !default;
 
 // stroke | svg
 $color-helper--enable--stroke-color: false !default;
-$color-helper--selector--stroke-color: 'stroke-' !default;
+$color-helper--selector--stroke-color: 'stroke--' !default;
