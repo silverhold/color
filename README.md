@@ -17,6 +17,7 @@ $colors: (
     black: #000,
 )
 ```
+You also need to include before `color-helper.scss` the `responsive-helper.scss` file from the [responsive-helper library](https://github.com/LoicGoyet/responsive-helper) if you want to enable the responsive helper class generation.
 
 And you are all set ! It will generate class to attribute with those colors for the color, background-color, border-color, fill (opt-in) & stroke (opt-in) attributes on this pattern : `color-{color}`, `background-color-{color}`, `border-color-{color}`, `fill-{color}`, `stroke-{color}`.
 
