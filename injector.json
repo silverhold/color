@@ -1,5 +1,5 @@
 {
-    "stylevendor": [
+    "stylevendors": [
         "@bower/color-helper/color-helper.scss"
     ],
 
