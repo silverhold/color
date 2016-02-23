@@ -24,13 +24,9 @@ $color-helper--state-list: (
             @include color-helper--rules-generator($property, $label, $value);
 
             @if $color-helper--enable--breakpoints {
-                @each $breakpoint, $query in $color-helper--breakpoints {
-                    @if $query == 0 {
-                        @include color-helper--rules-generator($property, $label, $value, $breakpoint);
-                    } @else {
-                        @media (min-width: $query) {
-                            @include color-helper--rules-generator($property, $label, $value, $breakpoint);
-                        }
+                @each $breakpoint_key, $breakpoint_value in $breakpoints {
+                    @include media-query($breakpoint_key, 'mobile-first') {
+                        @include color-helper--rules-generator($property, $label, $value, $breakpoint_key);
                     }
                 }
             }
