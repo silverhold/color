@@ -14,53 +14,57 @@
         For each of the colors shown above you can use the helper classes listed below. Each helper class has its equilavent sass placeholder to extend.
     </p>
 
-    {% set helpers = [
-        {
-            'property': 'background-color',
-            'class': '.bg-color--{color}',
-            'default': true,
-        },
-        {
-            'property': 'color',
-            'class': '.color--{color}',
-            'default': true,
-        },
-        {
-            'property': 'border-color',
-            'class': '.border-color--{color}',
-            'default': true,
-        },
-        {
-            'property': 'fill',
-            'class': '.fill--{color}',
-            'default': false,
-        },
-        {
-            'property': 'stroke',
-            'class': '.stroke--{color}',
-            'default': false,
-        },
-    ] %}
+    {% if helpers is not defined %}
+        {% set helpers = [
+            {
+                'property': 'background-color',
+                'class': '.bg-color--{color}',
+                'enabled': true,
+            },
+            {
+                'property': 'color',
+                'class': '.color--{color}',
+                'enabled': true,
+            },
+            {
+                'property': 'border-color',
+                'class': '.border-color--{color}',
+                'enabled': true,
+            },
+            {
+                'property': 'fill',
+                'class': '.fill--{color}',
+                'enabled': false,
+            },
+            {
+                'property': 'stroke',
+                'class': '.stroke--{color}',
+                'enabled': false,
+            },
+        ] %}
+    {% endif %}
 
-    <table>
-        <thead>
-            <tr>
-                <th>property</th>
-                <th>helper class</th>
-                <th>is default enabled</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            {% for helper in helpers %}
+    {% if helpers|length %}
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>{{ helper.property }}</td>
-                    <td>{{ helper.class }}</td>
-                    <td>{{ helper.default }}</td>
+                    <th>property</th>
+                    <th>helper class</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+
+            <tbody>
+                {% for helper in helpers %}
+                    {% if helper.enabled %}
+                        <tr>
+                            <td>{{ helper.property }}</td>
+                            <td>{{ helper.class }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 
 
     {% if breakpoints|default(false) %}
