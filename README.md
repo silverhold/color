@@ -4,7 +4,7 @@ A scss tool to generate bunch of color helper class.
 ## Installation
 Color helper is available via bower :
 ```
-$ bower install color-helper
+$ bower install trowel-color
 ```
 
 ## Usage
