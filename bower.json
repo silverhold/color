@@ -1,10 +1,10 @@
 {
-  "name": "color-helper",
-  "homepage": "https://github.com/LoicGoyet/color-helper",
+  "name": "trowel-color",
+  "homepage": "https://github.com/Trowel/color",
   "authors": [
     "Loïc Goyet <loic@appventus.com>"
   ],
-  "description": "A scss tool to generate bunch of color helper class.",
+  "description": "A trowel component to manage colors",
   "main": "color-helper.scss",
   "keywords": [
     "scss",
@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "responsive-helper": "^1.1.1"
+    "trowel-responsive": "^1.1.1"
   }
 }
