@@ -1,3 +1,10 @@
-@function pick-color($label) {
-    @return map-get($colors, $label);
+@function pick-color($label, $opacity: 1) {
+    $color: map-get($colors, $label);
+    $transparentize: 1 - $opacity;
+
+    @if $color {
+        @return transparentize($color, $transparentize);
+    } @else {
+        @return null;
+    }
 }
