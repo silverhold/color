@@ -1,10 +1,10 @@
 {
-  "name": "trowel-color",
-  "homepage": "https://github.com/Trowel/color",
+  "name": "silverhold-color",
+  "homepage": "https://github.com/silverhold/color",
   "authors": [
     "Loïc Goyet <loic@appventus.com>"
   ],
-  "description": "A trowel component to manage colors",
+  "description": "A silverhold component to manage colors",
   "main": "color-helper.scss",
   "keywords": [
     "scss",
@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "trowel-responsive": "^1.1.1"
+    "silverhold-responsive": "^1.1.1"
   }
 }
